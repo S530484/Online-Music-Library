@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Online music library</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,12 +17,25 @@
     .navbar-inverse .navbar-nav>li>a {
     color: #ffffff;
 }
-
-nav>.active>a:hover {
-    color: #e80f0f;
+.wrapper{
     background-color: #080808;
 }
 
+.nav>.active>a:hover {
+    color: #e80f0f;
+    background-color: #080808;
+    
+}
+.navbar-nav{
+    font-size: large;
+    font-weight: bolder;
+    font-stretch: semi-expanded;
+    font-family: cursive;
+}
+
+.footer-class {
+    background-color:#9e0909;
+}
 .navbar-left {
   padding: 0px;
 }
@@ -54,6 +67,22 @@ nav>.active>a:hover {
       display: none; 
     }
   }
+
+
+.container.footer-container {
+    width: 100%;
+}
+.footer-container {
+    background: black;
+}
+
+.footer-container .music-logo {
+    margin-top: 5em;
+    text-align: center;
+
+}
+
+
   </style>
 </head>
 <body>
@@ -70,14 +99,14 @@ nav>.active>a:hover {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="contact.ejs">Contact</a></li>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/music">Music</a></li>
+        <li><a href="/aboutus">Aboutus</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-sign-up"></span> Signup</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/signup"><span class="glyphicon glyphicon-sign-up"></span> Signup</a></li>
       </ul>
     </div>
   </div>
@@ -151,9 +180,17 @@ nav>.active>a:hover {
   </div>
 </div><br>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
+<div class="container footer-container">
+    <section class="music-logo">
+        <img src="/images/tunein.jpg" alt="logo"onclick="window.location='/'">
+    </section>
+    <section class="footer">
+        <div>
+            <a href="/" onclick="window.location='/'">Listen Now</a>
+        </div>
+    </section>
+
+</div>
 
 </body>
 </html>
