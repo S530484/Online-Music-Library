@@ -1,12 +1,319 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+  <title>Online music library</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
+.wrapper{
+    background-color: #080808;
+}
+
+.nav>.active>a:hover {
+    color: #e80f0f;
+    background-color: #080808;
+}
+
+.navbar-nav{
+    font-size: large;
+    font-weight: bolder;
+    font-stretch: semi-expanded;
+    font-family: cursive;
+}
+
+.navbar-left {
+  padding: 0px;
+  cursor: pointer;
+}
+.navbar-left>img {
+    height: 110px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 15px;
+    width: auto;
+}
+
+    .navbar-inverse {
+        background-color:#9e0909;
+
+    }
+
+    ul.nav a:hover { color:red !important; }
+    
+    h2{
+    background-color: #FEFFED;
+    padding: 30px 35px;
+    margin: -10px -50px;
+    text-align:center;
+    border-radius: 10px 10px 0 0;
+    }
+    hr{
+    margin: 10px -50px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-bottom: 40px;
+    }
+    div.container{
+      width: 400px;
+      height: 610px;
+    margin:auto;
+    font-family: cursive;
+    }
+    div.main{
+    width: 300px;
+    padding: 10px 50px 25px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-family: cursive;
+    float:left;
+    margin-top:50px;
+    }
+    input[type=text],input[type=password]{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    color: #4f4f4f;
+    font-size: 16px;
+    border-radius: 5px;
+    }
+    label{
+    color: #464646;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 14px;
+    font-weight: bold;
+    }
+    center{
+    font-size:32px;
+    }
+    .note{
+    color:red;
+    }
+    .valid{
+    color:green;
+    }
+    .warning{
+      color:red;
+    }
+    .back{
+    text-decoration: none;
+    border: 1px solid rgb(0, 143, 255);
+    background-color: rgb(0, 214, 255);
+    padding: 3px 20px;
+    border-radius: 2px;
+    color: black;
+    }
+    input[type=button]{
+    font-size: 16px;
+    background: linear-gradient(#9e0909 5%, #9e0909 100%);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+    outline:none;
+    }
+    input[type=button]:hover{
+    background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
+    }
+    span.signup {
+    float: left;
+    padding-top: 16px;
+}
+
+    span.forgot {
+    float: right;
+    padding-top: 16px;
+  }
+ /* */
+ .form-control {
+    width: 95%;
+}
+
+.login-btn{
+ color: white;
+ background-color:#9e0909 ;
+ border-color: #9e0909;
+}
+
+
+
+
+.container.footer-container {
+    width: 100%;
+}
+.footer-container {
+    background:#9e0909;
+}
+
+.footer-container .music-logo {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.footer-container .music-logo img{
+    margin-top: 1em;
+    height: 70px;
+}
+.footer {
+    text-align: center;
+    color: black;
+    font-size: 1.5em;
+    padding: 20px 0 20px;
+    margin: 0 auto 0 auto;
+    margin-bottom: 85px;
+}
+
+.footer a {
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    font-stretch: semi-expanded;
+    font-family: cursive;
+}
+
+.social {
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.footer a:hover{ color:#080808 !important;}
+footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .footer-class {
+    background-color:#9e0909;
+}
+
+</style>
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-left" ><img src="/images/tunein.jpg"alt="logo" onclick="window.location='/'"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/music">Music</a></li>
+        <li><a href="/aboutus">Aboutus</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/signup"><span class="glyphicon glyphicon-sign-up"></span> Signup</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+<div class="main">
+<h2>LOGIN HERE!!</h2>
+
+
+<form action="" id="validateForm" role="form" method="post">
+  <div class="form-group">
+    <label for="email"> <span class="req">* </span> Email Address: </label>
+    <input type="text"class="form-control" name="email" placeholder="Enter Email" id="email" onchange="email_validate(this.value);" required/>
+    <div class="status" id="status"> </div>
+  </div>
+  <div class="form-group">
+    <label for="password"> <span class="req">* </span> Password: </label>
+    <input type="password" name="password" placeholder="Enter password" class="form-control inputpass" minlength="4" maxlength="16" id="pass1" required />  
+  </div>
+  <div class="form-group">
+      <input class="login-btn" type="submit" name="submit_login" value="Login">
+  </div>
+
+  </form>
+</div>
+</div>
+
+<div class="container footer-container">
+    <section class="music-logo">
+        <img src="/images/tunein2.jpg" alt="logo"onclick="window.location='/'">
+    </section>
+    <section class="footer">
+        <div>
+            <a href="/" onclick="window.location='/'">Home</a>  |
+            <a href="/music">Listen Now</a>  | 
+            <a href="/aboutus" >About TuneIn</a>  | 
+            <a href="/contact" >Contact TuneIn</a>  | 
+            <a href="/login" >Login TuneIn</a>  | 
+        </div>
+        <div class="social" >
+            <a id="facebook">
+                 <img src="/images/facebook.png" alt="facebooklogo">
+            </a>
+            <a id="instagram" >
+                    <img src="/images/instagram.png" alt="instagramlogo">
+               </a>
+               <a id="twitter" >
+                    <img src="/images/twitter.png" alt="twitterlogo">
+               </a>
+        </div>
+        <div class="copyright">
+            copyright @ 2018 TuneIN 
+        </div>
+    </section>
+</div>
+
+<script>
+function email_validate(email){
+  var regMail = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
+  if(regMail.test(email) == false)
+  {
+    document.getElementById("status").innerHTML = "<span class='warning'>Email address is not valid yet.</span>";
+  }
+  else
+  {
+    document.getElementById("status").innerHTML = "<span class='valid'>Thanks, you have entered a valid Email address!</span>";
+  }
+}  
+
+$('#facebook').click(function(){
+window.open("https://www.facebook.com/");
+});
+
+$('#instagram').click(function(){
+window.open("https://www.instagram.com/");
+});
+
+$('#twitter').click(function(){
+window.open("https://twitter.com/");
+});
+
+</script>
 
 </body>
 </html>
