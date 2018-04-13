@@ -205,6 +205,9 @@ footer {
     .footer-class {
     background-color:#9e0909;
 }
+span.psw {
+    float: right;
+}
 
 </style>
 </head>
@@ -241,7 +244,7 @@ footer {
 <h2>LOGIN HERE!!</h2>
 
 
-<form action="" id="validateForm" role="form" method="post">
+<form action="" id="loginForm" role="form" method="post">
   <div class="form-group">
     <label for="email"> <span class="req">* </span> Email Address: </label>
     <input type="text"class="form-control" name="email" placeholder="Enter Email" id="email" onchange="email_validate(this.value);" required/>
@@ -253,6 +256,7 @@ footer {
   </div>
   <div class="form-group">
       <input class="login-btn" type="submit" name="submit_login" value="Login">
+      <span class="psw"><a href="#">Forget password?</a></span>
   </div>
 
   </form>
